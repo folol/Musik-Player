@@ -1,0 +1,7 @@
+Bug list - 
+	1- App is taking a hell lot of memory.
+	2 - When user update profile pic via camera it is not returning to imageview .
+	3 - In notification Play/Pause button is not being updated.
+	4 - In notification Delete button is not killing the service.
+	5 - In screen lock notification Play/Pause button is not being updated.
+	6 - Bottom view Play/Pause textview is not being updated properly.

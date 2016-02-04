@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="song_mode_array">
+        <item>Song</item>
+        <item>Artist</item>
+        <item>Album</item>
+        <item>Genre</item>
+        <item>Playlist</item>
+        <item>File Browser</item>
+    </string-array>
+
+
+    <string-array name="sort_mode_array">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+
+</resources>

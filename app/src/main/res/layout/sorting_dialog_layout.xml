@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+   <!--<TextView
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:text="Ascending"
+        android:id="@+id/asc_tv"
+        android:layout_weight="0.02"
+        android:textSize="20sp" /> -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_order"
+            android:orientation="horizontal">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/asc_rb"
+        android:layout_weight="0.02"
+        android:checked="false"
+        android:text="Ascending"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_rb"
+            android:layout_weight="0.02"
+            android:checked="false"
+            android:text="Descending" />
+
+        </RadioGroup>
+
+    <!--<TextView
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:text="Descending"
+        android:id="@+id/desc_tv"
+        android:layout_weight="0.02"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" /> -->
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+     <TextView
+         android:layout_width="100dp"
+         android:layout_height="wrap_content"
+         android:text="Alphabetically"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+         android:layout_weight="0.39"
+         android:textSize="20sp"
+         android:layout_marginTop="20sp" /> -->
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_type">
+
+     <RadioButton
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+         android:checked="false"
+         android:id="@+id/alpha_rb"
+         android:text="Alphabetically" />
+
+    <!--</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Date Added"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="0.29"
+                android:textSize="20sp"
+                android:layout_marginTop="20sp" /> -->
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="false"
+                android:id="@+id/date_rb"
+                android:text="Date Added" />
+
+       <!-- </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Play Count"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="0.82"
+                android:textSize="20sp"
+                android:layout_marginTop="20sp" /> -->
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:checked="false"
+                android:id="@+id/counter_rb"
+                android:text="Play Count" />
+
+        </RadioGroup>
+
+     <!---   </LinearLayout> -->
+
+
+    </LinearLayout>
+
+</LinearLayout>

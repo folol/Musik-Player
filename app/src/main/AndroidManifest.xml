@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sky.myapplication" >
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyMaterialTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".SearchableActivity" />
+        </activity>
+
+        <service android:name=".MusicService" />
+
+        <activity
+            android:name=".UserRegistration"
+            android:label="@string/title_activity_user_registration" >
+        </activity>
+        <activity
+            android:name=".UserRegistrationPartTwo"
+            android:label="@string/title_activity_user_registration_part_two" >
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name=".ArtistSpecific"
+            android:label="@string/title_activity_artist_specific"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+        <activity
+            android:name=".FullPlaybackActivity"
+            android:label="@string/title_activity_full_playback"
+            android:theme="@style/MyMaterialTheme" >
+
+            <!--
+            android:parentActivityName=".MainActivity"
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+            -->
+
+        </activity>
+
+        <receiver android:name=".NotificationBroadcast" >
+            <intent-filter>
+                <action android:name="com.example.sky.myapplication.delete" />
+                <action android:name="com.example.sky.myapplication.pause" />
+                <action android:name="com.example.sky.myapplication.next" />
+                <action android:name="com.example.sky.myapplication.play" />
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SearchableActivity"
+            android:label="@string/title_activity_searchable"
+            android:launchMode="singleTop"
+            android:theme="@style/MyMaterialTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".SocialNetwork"
+            android:label="@string/title_activity_social_network"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+    </application>
+
+</manifest>

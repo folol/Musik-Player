@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_end"
+        android:icon="@drawable/end"
+        android:orderInCategory="2"
+        app:showAsAction="always"
+        android:title="End"/>
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/rand"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/profile" android:title="Profile" android:orderInCategory="3"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/sort" android:title="Sort By" android:orderInCategory="4" app:showAsAction="never"/>
+
+
+
+
+
+
+</menu>

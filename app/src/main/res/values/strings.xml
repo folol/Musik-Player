@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Application</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_user_registration">UserRegistration</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_user_registration_part_two">UserRegistrationPartTwo</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_view_pager_experimental">ViewPagerExperimental</string>
+    <string name="title_activity_artist_specific">ArtistSpecific</string>
+    <string name="title_activity_full_playback">FullPlaybackActivity</string>
+    <string name="title_activity_searchable">SearchableActivity</string>
+    <string name="title_activity_social_network">SocialNetwork</string>
+    <string name="choose_mode">Choose Mode</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="description">Media Controls</string>
+
+</resources>
