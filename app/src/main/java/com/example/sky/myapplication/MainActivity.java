@@ -52,7 +52,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 
-public class MainActivity extends AppCompatActivity implements  SongsFragment.OnFragmentInteractionListener ,Handler.Callback  {
+public class MainActivity extends AppCompatActivity implements  SongsFragment.OnFragmentInteractionListener   {
 
     private ArrayList<Song> songList;               //List of Songs to be played
     private ArrayList<Song> realSongList;
@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity implements  SongsFragment.On
 //        mUiHandler = new Handler(Looper.getMainLooper());
         if(firstTime){
 
-            //Intent mRegistrationIntent = new Intent(this,UserRegistration.class);
-           // startActivityForResult(mRegistrationIntent,REG_SUCCESS);
+            Intent mRegistrationIntent = new Intent(this,UserRegistration.class);
+            startActivityForResult(mRegistrationIntent,REG_SUCCESS);
             settings.edit().putBoolean("first_time",false).apply();
 
         }
@@ -262,26 +262,31 @@ public class MainActivity extends AppCompatActivity implements  SongsFragment.On
             }
         });
 
+        mUiHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg)  {
+                Log.i("Musik","handler ran");
+                String msgString = msg.getData().getString("msg");
+                //Log.i("Musik","handler ran");
+                switch(msgString){
+                    case "Song_View_Selected":
+                        ArrayList<Song> sl = msg.getData().getParcelableArrayList("SongList");
+                        setSongViewMode(0);
+                        songFragmentDataChanged(sl);
+                        break;
+                    case "Ghanta":
+                        Toast.makeText(getBaseContext(),"Handler ran",Toast.LENGTH_LONG).show();
+                        break;
+                    default:
+                        break;
 
+                }
+            }
+        };
 
     }
 
-    @Override
-        public boolean handleMessage(Message msg)  {
-            String msgString = msg.getData().getString("messsage");
-            ArrayList<Song> sl = msg.getData().getParcelableArrayList("SongList");
-            Log.i("Musik","handler ran");
-            switch(msgString){
-                case "Song_View_Selected":
-                    setSongViewMode(0);
-                    songFragmentDataChanged(sl);
-                    break;
-                default:
-                    return true;
 
-            }
-        return true;
-        }
 
 
     public Handler getUiHandler(){
@@ -630,6 +635,22 @@ public class MainActivity extends AppCompatActivity implements  SongsFragment.On
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showToast(){
+        new Thread(new Runnable() {
+
+            // After call for background.start this run method call
+            public void run() {
+                //Handler mUiHandler = new Handler(Looper.getMainLooper());
+                Message msg = mUiHandler.obtainMessage();
+                Bundle b = new Bundle();
+                b.putString("msg","Ghanta");
+                msg.setData(b);
+                mUiHandler.sendMessage(msg);
+                Log.i("Musik","Thread ran");
+            }
+        }).start();
     }
 
     @Override

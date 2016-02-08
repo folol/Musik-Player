@@ -56,17 +56,30 @@ public class SongViewDialog  extends DialogFragment {
                         else {
                             switch (which) {
                                 case 0:
-                                       //     final Handler mHandler = new Handler(Looper.getMainLooper());
-                                    qsl = new QuerySongList(getContext(),null, null, null, "SONG");
-                                    qsl.findSongs();
+                                    final Handler mHandler = ma.getUiHandler();
+                                    new Thread(new Runnable() {
+
+                                        // After call for background.start this run method call
+                                        public void run() {
+                                            qsl = new QuerySongList(getContext(),null, null, null, "SONG");
+                                            qsl.findSongs();
+                                            Message msg = mHandler.obtainMessage();
+                                            Bundle b = new Bundle();
+                                            b.putString("msg", "Song_View_Selected");
+                                            b.putParcelableArrayList("SongList", qsl.getList());
+                                            msg.setData(b);
+                                            mHandler.sendMessage(msg);
+                                            Log.i("Musik","Thread ran");
+                                        }
+                                    }).start();
+                                    dialog.dismiss();
+
 //                                            Bundle b = new Bundle();
 //                                            b.putString("message","Song_View_Selected");
 //                                            b.putParcelableArrayList("SongList", qsl.getList());
 //                                      //      ma.runHandler(b);
                                      //       Log.i("Musik","Thread ran "+mHandler);
-                                    ma.setSongViewMode(which);
-                                    ma.songFragmentDataChanged(qsl.getList());
-                                    dialog.dismiss();
+
                                     break;
                                 case 1:
                                     mProjection[0] = "DISTINCT " + android.provider.MediaStore.Audio.Media.ARTIST;
